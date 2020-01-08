@@ -1,21 +1,29 @@
-// ProgrammingChallenge4.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
+// name: Lilit Khamalyan
+// date: 1/07/2020
+// Programming Challenge 4: Write a program that computes the tax and tip on a resautant bill for a patron with a $88.67 meal charge.
+// The tax should be 6.75% of the meal cost. The tip should be 20% of the total after adding the tax. Display the meal cost, tax amount,
+// tip amount, and total bill on the screen.
 #include "pch.h"
 #include <iostream>
+#include <iomanip>
+using namespace std;
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+     // Variables to hold meal charge, tax amount, tip amount, and total bill 
+     double mealCharge = 88.67,
+          taxAmount, tipAmount, totalBill;
+     // Display meal cost
+     cout << "Meal cost: $" << mealCharge << endl;
+     // Calculate and display tax amount
+     taxAmount = mealCharge * 0.0675;
+     cout << "Tax amount: $" << fixed << setprecision(2) << taxAmount << endl;
+     // Calculate and display tip amount 
+     tipAmount = (mealCharge + taxAmount) * 0.2;
+     cout << "Tip amount: $" << tipAmount << endl;
+     // Calculate and display total amount 
+     totalBill = mealCharge + taxAmount + tipAmount;
+     cout << "Total bill: $" << totalBill << endl;
+     system("pause");
+     return 0;
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
